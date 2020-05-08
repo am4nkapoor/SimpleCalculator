@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+   <div class="calculatrice">
+    <div class="calculator">Simple Calculator</div>
+   	<form name="calculatrice">
+   		<input name="textview" class="screen" type="textview">
+   	</form>
+   	<table cellspacing="0" cellpadding="0" >
+   		<tr>
+   			<td><input type="button" class="bn" value="AC" onclick=" document.calculatrice.textview.value = ''"/></td>
+        <td><input type="button" class="bn" value="DELETE" onclick="back()"/></td>
+        <td><input type="button" class="bn" id="equal" value="=" onclick="document.calculatrice.textview.value = eval(document.calculatrice.textview.value)"/></td>
+   			<td><input type="button" class="bn sign" value="/" onclick="document.calculatrice.textview.value += '/'"/></td>
+   		</tr>
+   		<tr>
+   			<td><input type="button" class="bn" value="7" onclick="document.calculatrice.textview.value += '7'"/></td>
+   			<td><input type="button" class="bn" value="8" onclick="document.calculatrice.textview.value += '8'"/></td>
+   			<td><input type="button" class="bn" value="9" onclick="document.calculatrice.textview.value += '9'"/></td>
+   			<td><input type="button" class="bn sign" value="x" onclick="document.calculatrice.textview.value += '*'"/></td>
+   		</tr>
+   		<tr>
+   			<td><input type="button" class="bn" value="4" onclick="document.calculatrice.textview.value += '4'"/></td>
+   			<td><input type="button" class="bn" value="5" onclick="document.calculatrice.textview.value += '5'"/></td>
+   			<td><input type="button" class="bn" value="6" onclick="document.calculatrice.textview.value += '6'"/></td>
+   			<td><input type="button" class="bn sign" value="-" onclick="document.calculatrice.textview.value += '-'"/></td>
+   		</tr>
+   		<tr>
+   			<td><input type="button" class="bn" value="1" onclick="document.calculatrice.textview.value += '1'"/></td>
+   			<td><input type="button" class="bn" value="2" onclick="document.calculatrice.textview.value += '2'"/></td>
+   			<td><input type="button" class="bn" value="3" onclick="document.calculatrice.textview.value += '3'"/></td>
+        <td><input type="button" class="bn sign" value="+" onclick="document.calculatrice.textview.value += '+'"/></td>
+   		</tr>
+   		<tr>
+   			<td colspan="2"><input type="button" class="bn zero" value="0" onclick="document.calculatrice.textview.value += '0'"/></td>
+        <td><input type="button" class="bn" value="." onclick="document.calculatrice.textview.value += '.'"/></td>
+        <td><input type="button" class="bn sign" value="%" onclick="document.calculatrice.textview.value = (document.calculatrice.textview.value /100)"/></td>
+   		</tr>
+   	</table>
+   </div>
+</body>
+<script>
+  function back(){
+    var exp = document.calculatrice.textview.value;
+    document.calculatrice.textview.value = exp.substring(0,exp.length-1); 
+  }
+</script>
+</html>
